@@ -1,0 +1,251 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;0,600;0,700;1,200&display=swap');
+
+
+*{
+    box-sizing: border-box;
+
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.main-container{
+    width:400px;
+    background: #fff;
+    box-shadow:  0 0 10px 2px #3333331A;
+    border-radius:3px;
+    overflow: hidden;
+}
+
+.main-container h3{
+    margin-left: 1.5rem;
+}
+
+img{
+    max-width: 100%;
+}
+header{
+   padding:1rem;
+   display:flex;
+   align-items: center;
+   justify-content: center;
+}
+header input{
+    padding: 0.5rFem 1rem;
+    border-radius: 3px;
+    border:none;
+    background-color: #E2E2E2;
+    font:inherit;
+    color:rgb(90, 92, 94);
+    outline:none;
+}
+
+header button{
+    background-color: transparent;
+    color:rgb(189, 148, 185);
+    font-size:1.5rem;
+    border:none;
+    margin-left: 10px;
+}
+
+.fav-container{
+    padding:0 1rem;
+    display:flex;
+    background-color: #C9D6FF;
+    height:150px;
+}
+.fav-meals{
+    display:flex;
+    text-align: center;
+    list-style-type: none;
+    padding:0;
+    flex-wrap: wrap;
+}
+
+.fav-meals li{
+    width: 85px;
+    margin:5px;
+    position:relative;
+}
+
+.fav-meals li .clear{
+    background-color: transparent;
+    position: absolute;
+    border:none;
+    top:-0.5rem;
+    right:-0.5rem;
+    font-size: 1.2rem;
+    opacity:0;
+}
+
+.fav-meals li:hover .clear{
+    opacity:1;
+}
+.fav-meals li img{
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px 2px #3333331A;
+}
+.fav-meals li span{
+    size:0.8rem;
+    display:inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 75px;
+}
+.meal{
+   box-shadow: 0 0 10px 2px #3333331A;
+   border-radius: 3px;
+   margin:1.5rem;
+   overflow: hidden;
+  
+}
+.meal-header{
+    position:relative
+}
+
+.meal-header .random{
+    position:absolute;
+    top:10px;
+    background-color: #fff;
+    padding: 0.25rem  1rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.meal-header img{
+    object-fit: cover;
+    height:300px; 
+    width: 100%;
+}
+.meal-body{
+       display:flex;
+       align-items: center;
+       justify-content: space-between;
+       padding:1rem;
+}
+
+.meal-body h4{
+    margin:0;
+}
+.meal-body .fav-btn{
+    border:none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color:grey;
+    cursor: pointer;
+}
+
+.meal-body .fav-btn.active{
+   color:rgb(165, 132, 173);
+}
+
+
+
+.popup-container{
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    
+    
+
+}
+.popup-container.hide{
+    opacity:0;
+   pointer-events: none;
+}
+
+.popup{
+   background:white;
+   max-width: 800px;
+   max-height: 100vh;
+   width:100%;
+   padding:0 2rem;
+   border-radius: 5px;
+   position:relative;
+   overflow: auto;
+   
+
+}
+.popup .close-popup{
+    position:absolute;
+    top:1rem;
+    right:1rem;
+    background-color: transparent;
+    border:none;
+    font-size:1.5rem;
+    cursor:pointer;
+
+}
+
+.meal-info h1{
+    text-align: center;
+
+}
+.meal-info img{
+    width:400px;
+    height: 300px;
+    text-align: center;
+}
+
+
+.meal-info p{
+    size:1rem;
+   
+}
+@media  screen and (min-width:768px) {
+    .main-container{
+        width:auto;
+        margin:0 auto;
+    }
+    .meals{
+        display: grid;
+        grid-template-columns:repeat(2,1fr);
+       
+    }
+    
+    
+    
+}
+
+@media screen and (min-width: 1042px) {
+    .main-container{
+        width:auto;
+        margin:0 auto;
+    }
+
+    header{
+        justify-content: flex-end;
+        
+    }
+    .meals{
+        display: grid;
+        grid-template-columns:repeat(3,1fr);
+       
+    }
+    .meal{
+        width:300px;
+      
+    }
+
+}
+
